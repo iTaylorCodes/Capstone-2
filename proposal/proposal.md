@@ -2,7 +2,7 @@
 
 ## 1. What tech stack will you use for your final project?
 
-This project will have a React front-end, a Node/Express back-end, and a PostgreSQL database.
+This project will have a React/Redux front-end, a Node/Express back-end, and a PostgreSQL database. The routing will be done client-side using the React Router library.
 
 ---
 
@@ -32,7 +32,7 @@ The target demographic for this project is anyone looking for information on nei
 
 ## 6. What data do you plan on using? How are you planning on collecting your data?
 
-This project will pull neighborhood scores from `walkscore.com's` API as well as real estate information from the `zillow.com` API hosted on `rapidapi.com`. It will also have have a database of users.
+This project will pull neighborhood scores from `walkscore.com's` API as well as real estate information from the `zillow.com` API hosted on `rapidapi.com`. It will also have a database with tables of users and favorited properties.
 
 ---
 
@@ -40,7 +40,7 @@ This project will pull neighborhood scores from `walkscore.com's` API as well as
 
 - **What does your database schema look like?**
 
-  This project's database schema will have a users table, with these columns: Username, Password, Email, Favorite_Properties. Favorite_Properties will be a list of real estate properties the user has favorited.
+  This project's database schema will have two tables. One for users, with columns: id, username, password, and email. The second a favorite_properties table with columns: user_id (referencing the id from the users table), and property_zpid (a unique property id that will come from zillows API).
 
 <p>&nbsp;</p>
 
