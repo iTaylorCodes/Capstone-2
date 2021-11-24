@@ -1,5 +1,7 @@
 # Capstone 2 - Neighborhood
 
+[![Build Status](https://app.travis-ci.com/iTaylorCodes/Capstone-2-Neighborhood-fe.svg?branch=main)](https://app.travis-ci.com/iTaylorCodes/Capstone-2-Neighborhood-fe)
+
 Apis used:
 
 - Walk Score API: `https://www.walkscore.com/professional/api.php`
