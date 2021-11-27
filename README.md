@@ -1,6 +1,7 @@
 # Capstone 2 - Neighborhood
 
 [![Build Status](https://app.travis-ci.com/iTaylorCodes/Capstone-2-Neighborhood-fe.svg?branch=main)](https://app.travis-ci.com/iTaylorCodes/Capstone-2-Neighborhood-fe)
+[![Coverage Status](https://coveralls.io/repos/github/iTaylorCodes/Capstone-2-Neighborhood-fe/badge.svg?branch=main)](https://coveralls.io/github/iTaylorCodes/Capstone-2-Neighborhood-fe?branch=main)
 
 Apis used:
 
