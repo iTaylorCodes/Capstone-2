@@ -2,6 +2,7 @@
 
 [![Build Status](https://app.travis-ci.com/iTaylorCodes/Capstone-2-Neighborhood-fe.svg?branch=main)](https://app.travis-ci.com/iTaylorCodes/Capstone-2-Neighborhood-fe)
 [![Coverage Status](https://coveralls.io/repos/github/iTaylorCodes/Capstone-2-Neighborhood-fe/badge.svg?branch=main)](https://coveralls.io/github/iTaylorCodes/Capstone-2-Neighborhood-fe?branch=main)
+[![Codacy Badge](https://app.codacy.com/project/badge/Grade/638762e1a75140b888b09521c0491bb5)](https://www.codacy.com/gh/iTaylorCodes/Capstone-2-Neighborhood-fe/dashboard?utm_source=github.com&utm_medium=referral&utm_content=iTaylorCodes/Capstone-2-Neighborhood-fe&utm_campaign=Badge_Grade)
 
 Apis used:
 
