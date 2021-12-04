@@ -1,0 +1,30 @@
+.NavBar {
+  background-color: #9dc183;
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.125);
+}
+
+.NavBar a {
+  text-shadow: 1px 1px black;
+  color: white;
+  font-size: large;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.NavBar-right a {
+  margin-left: 1rem;
+}
+
+.NavBar .activeLink {
+  text-shadow: 1px 1px black;
+  color: white;
+  font-size: large;
+  font-weight: 800;
+  text-decoration: none;
+  border-bottom-width: 3px;
+  border-bottom-style: solid;
+  padding-bottom: 3px;
+}
