@@ -1,11 +1,11 @@
 import { render } from "@testing-library/react";
+import Router from "./Router";
 import { MemoryRouter } from "react-router";
-import App from "./App";
 
 it("renders without crashing", function () {
   render(
     <MemoryRouter>
-      <App />
+      <Router />
     </MemoryRouter>
   );
 });
@@ -13,7 +13,7 @@ it("renders without crashing", function () {
 it("matches snapshot", function () {
   const { asFragment } = render(
     <MemoryRouter>
-      <App />
+      <Router />
     </MemoryRouter>
   );
   expect(asFragment()).toMatchSnapshot();
