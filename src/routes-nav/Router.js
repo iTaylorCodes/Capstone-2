@@ -6,12 +6,12 @@ import Profile from "../profile/Profile";
 import Neighborhood from "../neighborhoods/Neighborhood";
 import FavoritesList from "../favorites/FavoritesList";
 
-const Router = () => {
+const Router = ({ signup }) => {
   return (
     <Routes>
       <Route path="*" element={<Navigate replace to="/" />} />
       <Route path="/" element={<Home />} />
-      <Route path="/signup" element={<SignupForm />} />
+      <Route path="/signup" element={<SignupForm signup={signup} />} />
       <Route path="/login" element={<LoginForm />} />
       <Route path="/profile" element={<Profile />} />
       <Route path="/neighborhood/:neighborhood" element={<Neighborhood />} />
