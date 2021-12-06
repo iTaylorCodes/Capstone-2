@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="row justify-content-center"
+  >
+    <div
+      class="col-sm-8 col-md-7 col-lg-6"
+    >
+      <h1
+        class="m-3"
+      >
+        Create an Account
+      </h1>
+      <div
+        class="card"
+      >
+        <form>
+          <div
+            class="m-3"
+          >
+            <label
+              class="form-label"
+              for="username"
+            >
+              Username
+            </label>
+            <input
+              autocomplete="username"
+              class="form-control"
+              id="username"
+              name="username"
+              placeholder="Username"
+              value=""
+            />
+          </div>
+          <div
+            class="m-3"
+          >
+            <label
+              class="form-label"
+              for="first-name"
+            >
+              First Name
+            </label>
+            <input
+              autocomplete="firstName"
+              class="form-control"
+              id="first-name"
+              name="firstName"
+              placeholder="First Name"
+              value=""
+            />
+          </div>
+          <div
+            class="m-3"
+          >
+            <label
+              class="form-label"
+              for="last-name"
+            >
+              Last Name
+            </label>
+            <input
+              autocomplete="lastName"
+              class="form-control"
+              id="last-name"
+              name="lastName"
+              placeholder="Last Name"
+              value=""
+            />
+          </div>
+          <div
+            class="m-3"
+          >
+            <label
+              class="form-label"
+              for="email"
+            >
+              Email
+            </label>
+            <input
+              autocomplete="email"
+              class="form-control"
+              id="email"
+              name="email"
+              placeholder="Email"
+              value=""
+            />
+          </div>
+          <div
+            class="m-3"
+          >
+            <label
+              class="form-label"
+              for="password"
+            >
+              Password
+            </label>
+            <input
+              autocomplete="current-password"
+              class="form-control"
+              id="password"
+              name="password"
+              placeholder="Password"
+              type="password"
+              value=""
+            />
+          </div>
+          <div
+            class="m-3 d-flex justify-content-end"
+          >
+            <button
+              class="btn btn-primary"
+              type="submit"
+            >
+              Signup
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
