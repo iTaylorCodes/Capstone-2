@@ -32,8 +32,8 @@ const SignupForm = ({ signup }) => {
   };
 
   return (
-    <div className="row justify-content-center">
-      <div className="col-sm-8 col-md-7 col-lg-6">
+    <div className="row justify-content-center mb-3">
+      <div className="col-10 col-sm-9 col-md-8 col-lg-7">
         <h1 className="m-3">Create an Account</h1>
         <div className="card">
           <form onSubmit={handleSubmit}>
@@ -114,7 +114,7 @@ const SignupForm = ({ signup }) => {
             ) : null}
 
             <div className="m-3 d-flex justify-content-end">
-              <button className="btn btn-primary" type="submit">
+              <button className="btn btn-primary btn-lg" type="submit">
                 Signup
               </button>
             </div>
