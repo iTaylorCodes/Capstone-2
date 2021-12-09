@@ -3,34 +3,59 @@
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <nav
-    class="NavBar"
+    class="NavBar navbar navbar-expand-lg navbar-light bg-light"
   >
     <div
-      class="NavBar-left"
+      class="container-fluid"
     >
       <a
         aria-current="page"
-        class="activeLink"
+        class="navbar-brand text-primary fs-4 fw-bold"
         href="/"
       >
         Neighborhood
       </a>
-    </div>
-    <div
-      class="NavBar-right"
-    >
-      <a
-        class=""
-        href="/signup"
+      <button
+        aria-controls="navbarTogglerDemo02"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+        class="navbar-toggler"
+        data-bs-target="#navbarTogglerDemo02"
+        data-bs-toggle="collapse"
       >
-        Signup
-      </a>
-      <a
-        class=""
-        href="/login"
+        <span
+          class="navbar-toggler-icon"
+        />
+      </button>
+      <div
+        class="collapse navbar-collapse"
+        id="navbarTogglerDemo02"
       >
-        Login
-      </a>
+        <ul
+          class="navbar-nav me-auto mb-2 mb-lg-0"
+        >
+          <li
+            class="nav-item"
+          >
+            <a
+              class="nav-link"
+              href="/signup"
+            >
+              Signup
+            </a>
+          </li>
+          <li
+            class="nav-item"
+          >
+            <a
+              class="nav-link"
+              href="/login"
+            >
+              Login
+            </a>
+          </li>
+        </ul>
+      </div>
     </div>
   </nav>
 </DocumentFragment>

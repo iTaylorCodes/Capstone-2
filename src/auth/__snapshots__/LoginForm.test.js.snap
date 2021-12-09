@@ -6,12 +6,12 @@ exports[`matches snapshot 1`] = `
     class="row justify-content-center mb-3"
   >
     <div
-      class="col-10 col-sm-9 col-md-8 col-lg-7"
+      class="col-10 col-sm-9 col-md-8 col-lg-7 mt-5"
     >
       <h1
         class="m-3"
       >
-        Create an Account
+        Login
       </h1>
       <div
         class="card"
@@ -32,60 +32,7 @@ exports[`matches snapshot 1`] = `
               id="username"
               name="username"
               placeholder="Username"
-              value=""
-            />
-          </div>
-          <div
-            class="m-3"
-          >
-            <label
-              class="form-label"
-              for="first-name"
-            >
-              First Name
-            </label>
-            <input
-              autocomplete="firstName"
-              class="form-control"
-              id="first-name"
-              name="firstName"
-              placeholder="First Name"
-              value=""
-            />
-          </div>
-          <div
-            class="m-3"
-          >
-            <label
-              class="form-label"
-              for="last-name"
-            >
-              Last Name
-            </label>
-            <input
-              autocomplete="lastName"
-              class="form-control"
-              id="last-name"
-              name="lastName"
-              placeholder="Last Name"
-              value=""
-            />
-          </div>
-          <div
-            class="m-3"
-          >
-            <label
-              class="form-label"
-              for="email"
-            >
-              Email
-            </label>
-            <input
-              autocomplete="email"
-              class="form-control"
-              id="email"
-              name="email"
-              placeholder="Email"
+              required=""
               value=""
             />
           </div>
@@ -104,6 +51,7 @@ exports[`matches snapshot 1`] = `
               id="password"
               name="password"
               placeholder="Password"
+              required=""
               type="password"
               value=""
             />
@@ -115,7 +63,7 @@ exports[`matches snapshot 1`] = `
               class="btn btn-primary btn-lg"
               type="submit"
             >
-              Signup
+              Login
             </button>
           </div>
         </form>
