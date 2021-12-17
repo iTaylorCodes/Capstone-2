@@ -5,6 +5,7 @@ import LoginForm from "../auth/LoginForm";
 import Profile from "../profile/Profile";
 import Neighborhood from "../neighborhoods/Neighborhood";
 import FavoritesList from "../favorites/FavoritesList";
+import PrivateOutlet from "./PrivateOutlet";
 
 const Router = ({ signup, login }) => {
   return (
@@ -13,9 +14,13 @@ const Router = ({ signup, login }) => {
       <Route path="/" element={<Home />} />
       <Route path="/signup" element={<SignupForm signup={signup} />} />
       <Route path="/login" element={<LoginForm login={login} />} />
-      <Route path="/profile" element={<Profile />} />
+      <Route path="/profile" element={<PrivateOutlet />}>
+        <Route path="/profile" element={<Profile />} />
+      </Route>
       <Route path="/neighborhood/:neighborhood" element={<Neighborhood />} />
-      <Route path="/favorites" element={<FavoritesList />} />
+      <Route path="/favorites" element={<PrivateOutlet />}>
+        <Route path="/favorites" element={<FavoritesList />} />
+      </Route>
     </Routes>
   );
 };
