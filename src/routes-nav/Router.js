@@ -7,7 +7,7 @@ import Neighborhood from "../neighborhoods/Neighborhood";
 import FavoritesList from "../favorites/FavoritesList";
 import PrivateOutlet from "./PrivateOutlet";
 
-const Router = ({ signup, login }) => {
+const Router = ({ signup, login, logout }) => {
   return (
     <Routes>
       <Route path="*" element={<Navigate replace to="/" />} />
@@ -15,7 +15,7 @@ const Router = ({ signup, login }) => {
       <Route path="/signup" element={<SignupForm signup={signup} />} />
       <Route path="/login" element={<LoginForm login={login} />} />
       <Route path="/profile" element={<PrivateOutlet />}>
-        <Route path="/profile" element={<Profile />} />
+        <Route path="/profile" element={<Profile logout={logout} />} />
       </Route>
       <Route path="/neighborhood/:neighborhood" element={<Neighborhood />} />
       <Route path="/favorites" element={<PrivateOutlet />}>

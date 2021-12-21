@@ -5,6 +5,7 @@ const testUser = {
   first_name: "testfirst",
   last_name: "testlast",
   email: "test@test.net",
+  password: "password",
 };
 
 const UserProvider = ({ children, currentUser = testUser }) => (

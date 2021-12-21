@@ -66,7 +66,7 @@ function App() {
       <div className="App">
         <NavBar logout={logout} />
         <div>
-          <Router signup={signup} login={login} />
+          <Router signup={signup} login={login} logout={logout} />
         </div>
       </div>
     </UserContext.Provider>
