@@ -2,8 +2,15 @@
 
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
-  <div>
-    Temporary Neighborhood Homepage
+  <div
+    class="container"
+  >
+    <div
+      class="fw-bold"
+    />
+    <div>
+      Temporary Neighborhood Homepage
+    </div>
   </div>
 </DocumentFragment>
 `;

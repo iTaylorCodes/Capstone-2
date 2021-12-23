@@ -2,8 +2,10 @@ import { useState, useContext } from "react";
 import Alert from "../alert/Alert";
 import { NeighborhoodApi } from "../api/api";
 import UserContext from "../auth/UserContext";
+import { useDispatch } from "react-redux";
 
-const Profile = () => {
+const Profile = ({ logout }) => {
+  const dispatch = useDispatch();
   const { currentUser, setCurrentUser } = useContext(UserContext);
   const [formData, setFormData] = useState({
     username: currentUser.username,
@@ -55,10 +57,39 @@ const Profile = () => {
     setIsSaved(false);
   };
 
+  const deleteAcc = async (e) => {
+    e.preventDefault();
+
+    try {
+      await NeighborhoodApi.deleteProfile(currentUser.username);
+    } catch (errors) {
+      setFormErrors(errors);
+      return;
+    }
+
+    dispatch({
+      type: "ACCOUNT_DELETED",
+    });
+    logout();
+  };
+
   return (
     <div className="row justify-content-center mb-3">
-      <div className="col-10 col-sm-9 col-md-8 col-lg-7">
-        <h1 className="m-3">Profile</h1>
+      <div className="container col-10 col-sm-9 col-md-8 col-lg-7">
+        <div className="row mt-3 ms-1 me-1">
+          <div className="col-5">
+            <h1>Profile</h1>
+          </div>
+          <div className="d-flex justify-content-end col-7">
+            <button
+              className="btn btn-outline-danger btn-sm"
+              style={{ height: "35px" }}
+              onClick={deleteAcc}
+            >
+              Delete Account
+            </button>
+          </div>
+        </div>
         <div className="card">
           <form onSubmit={handleSubmit}>
             <fieldset disabled className="m-3">

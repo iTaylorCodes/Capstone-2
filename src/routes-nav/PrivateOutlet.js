@@ -15,7 +15,7 @@ import UserContext from "../auth/UserContext";
 function PrivateOutlet() {
   const { currentUser } = useContext(UserContext);
 
-  return currentUser ? <Outlet /> : <Navigate replace to="/login" />;
+  return currentUser ? <Outlet /> : <Navigate replace to="/" />;
 }
 
 export default PrivateOutlet;
