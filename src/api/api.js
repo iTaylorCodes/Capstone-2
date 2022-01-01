@@ -1,6 +1,9 @@
 import axios from "axios";
 
 const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
+const BASE_PLACES_URL = process.env.REACT_APP_PLACES_URL;
+const BASE_PHOTO_URL = process.env.REACT_APP_PHOTO_URL;
+const PROXY_URL = process.env.REACT_APP_PROXY_URL;
 
 /** API Class.
  *
@@ -68,4 +71,34 @@ class NeighborhoodApi {
   }
 }
 
-export { NeighborhoodApi };
+/** API Class.
+ *
+ * Static class to get city images from Google places API.
+ */
+
+class PlacesApi {
+  static async getImage(city_state) {
+    const placesUrl = `${BASE_PLACES_URL}/json?input=${city_state}&key=${process.env.REACT_APP_PLACES_API_KEY}&inputtype=textquery&fields=name,photos`;
+
+    const initialPlacesRequest = await axios
+      .get(PROXY_URL + placesUrl)
+      .catch(console.error);
+
+    const photoRef =
+      initialPlacesRequest?.data?.candidates?.[0]?.photos?.[0]?.photo_reference;
+
+    if (!photoRef) throw Error("City not found.");
+
+    const imageLookupUrl = `${BASE_PHOTO_URL}?photoreference=${photoRef}&key=${process.env.REACT_APP_PLACES_API_KEY}&maxwidth=700&maxheight=700`;
+
+    const imageUrlQuery = await fetch(PROXY_URL + imageLookupUrl)
+      .then((r) => r.blob())
+      .catch(console.error);
+
+    const image = URL.createObjectURL(imageUrlQuery);
+
+    return image;
+  }
+}
+
+export { NeighborhoodApi, PlacesApi };

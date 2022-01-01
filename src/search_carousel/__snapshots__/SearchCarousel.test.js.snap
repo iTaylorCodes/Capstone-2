@@ -1,0 +1,98 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="carousel slide"
+    data-bs-ride="carousel"
+    id="carouselExampleControls"
+  >
+    <div
+      class="carousel-inner"
+    >
+      <div
+        class="carousel-item active"
+      >
+        <a
+          href="/neighborhood/Los Angeles, CA"
+        >
+          <img
+            alt="Los Angeles, CA"
+            class="d-block w-100"
+            src="https://a.cdn-hotels.com/gdcs/production65/d1094/007d42a5-84e4-418e-a07d-a020fe670a43.jpg?impolicy=fcrop&w=800&h=533&q=medium"
+            style="width: 300px; height: 300px;"
+          />
+          <div
+            class="carousel-caption d-block"
+            style="top: 8px;"
+          >
+            <h5
+              class="bg-primary bg-gradient rounded d-inline p-2"
+              style="text-shadow: 2px 2px black;"
+            >
+              Los Angeles, CA
+            </h5>
+          </div>
+        </a>
+      </div>
+      <div
+        class="carousel-item"
+      >
+        <a
+          href="/neighborhood/San Diego, CA"
+        >
+          <img
+            alt="San Diego, CA"
+            class="d-block w-100"
+            src="https://www.visittheusa.com/sites/default/files/styles/16_9_1280x720/public/images/hero_media_image/2016-11/Hero_San%20Diego%20Skyline_John%20Bahu.jpg?h=3767f04f&itok=R32qq4Na"
+            style="width: 300px; height: 300px;"
+          />
+          <div
+            class="carousel-caption d-block"
+            style="top: 8px;"
+          >
+            <h5
+              class="bg-primary bg-gradient rounded d-inline p-2"
+              style="text-shadow: 2px 2px black;"
+            >
+              San Diego, CA
+            </h5>
+          </div>
+        </a>
+      </div>
+    </div>
+    <button
+      class="carousel-control-prev"
+      data-bs-slide="prev"
+      data-bs-target="#carouselExampleControls"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="carousel-control-prev-icon"
+      />
+      <span
+        class="visually-hidden"
+      >
+        Previous
+      </span>
+    </button>
+    <button
+      class="carousel-control-next"
+      data-bs-slide="next"
+      data-bs-target="#carouselExampleControls"
+      type="button"
+    >
+      <span
+        aria-hidden="true"
+        class="carousel-control-next-icon"
+      />
+      <span
+        class="visually-hidden"
+      >
+        Next
+      </span>
+    </button>
+  </div>
+</DocumentFragment>
+`;

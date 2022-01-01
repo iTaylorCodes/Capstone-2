@@ -8,7 +8,18 @@ exports[`matches snapshot 1`] = `
     <div
       class="fw-bold"
       id="alert-container"
-    />
+    >
+      <div
+        class="alert alert-warning m-3"
+        role="alert"
+      >
+        <p
+          class="mb-0 small"
+        >
+          Your account has been deleted.
+        </p>
+      </div>
+    </div>
     <div
       class="HomeContent m-3"
     >

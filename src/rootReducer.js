@@ -1,5 +1,8 @@
+import { v4 as uuidv4 } from "uuid";
+
 const INITIAL_STATE = {
   accountWasDeleted: false,
+  recentSearches: [],
 };
 
 const rootReducer = (state = INITIAL_STATE, action) => {
@@ -14,6 +17,19 @@ const rootReducer = (state = INITIAL_STATE, action) => {
       return {
         ...state,
         accountWasDeleted: false,
+      };
+
+    case "NEW_SEARCH":
+      if (state.recentSearches.length >= 5) {
+        state.recentSearches.shift();
+      }
+
+      return {
+        ...state,
+        recentSearches: [
+          ...state.recentSearches,
+          { city: action.searchTerm, image: action.image, id: uuidv4() },
+        ],
       };
 
     default:
