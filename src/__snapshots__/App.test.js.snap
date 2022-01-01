@@ -63,13 +63,73 @@ exports[`matches snapshot 1`] = `
     </nav>
     <div>
       <div
-        class="container"
+        class="text-center m-3"
       >
         <div
           class="fw-bold"
+          id="alert-container"
         />
-        <div>
-          Temporary Neighborhood Homepage
+        <div
+          class="HomeContent m-3"
+        >
+          <div>
+            <h1
+              class="text-primary mb-3"
+            >
+              Neighborhood
+            </h1>
+          </div>
+          <div
+            class="SearchBar d-flex justify-content-center"
+          >
+            <div
+              class="mb-3"
+            >
+              <form
+                class="input-group"
+              >
+                <div
+                  class="form-floating"
+                >
+                  <input
+                    class="form-control ps-5 pe-5"
+                    id="city-search"
+                    name="searchTerm"
+                    placeholder="Search City, State:"
+                    value=""
+                  />
+                  <label
+                    for="city-search"
+                  >
+                    Search City, State:
+                  </label>
+                </div>
+                <button
+                  class="btn btn-primary"
+                  data-testid="search-button"
+                  type="submit"
+                >
+                  <i
+                    class="fa fa-search"
+                  />
+                </button>
+              </form>
+            </div>
+          </div>
+          <div
+            class="SearchesCarousel container d-flex justify-content-center"
+          >
+            <div
+              class="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-4 bg-light text-center p-3"
+            >
+              <h3>
+                Recent Searches
+              </h3>
+              <p>
+                Your most recent searches will be shown here.
+              </p>
+            </div>
+          </div>
         </div>
       </div>
     </div>

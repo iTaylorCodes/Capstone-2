@@ -1,4 +1,4 @@
-import { NeighborhoodApi } from "./api";
+import { NeighborhoodApi, PlacesApi } from "./api";
 
 describe("NeighborhoodApi", function () {
   test("signup", async function () {
@@ -74,5 +74,18 @@ describe("NeighborhoodApi", function () {
 
   test("deleteProfile", async function () {
     await NeighborhoodApi.deleteProfile("testinguser");
+  });
+});
+
+describe("PlacesApi", () => {
+  global.URL.createObjectURL = jest.fn();
+
+  afterEach(() => {
+    global.URL.createObjectURL.mockReset();
+  });
+
+  test("getImage calls URL.createObjectURL mock", async function () {
+    await PlacesApi.getImage("Los Angeles, CA");
+    expect(global.URL.createObjectURL).toHaveBeenCalledTimes(1);
   });
 });

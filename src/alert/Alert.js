@@ -1,3 +1,5 @@
+import { v4 as uuidv4 } from "uuid";
+
 /** Alert component
  *
  * Shows bootstrap style alerts
@@ -9,7 +11,9 @@ const Alert = ({ type = "danger", messages = [] }) => {
   return (
     <div className={`alert alert-${type} m-3`} role="alert">
       {messages.map((error) => (
-        <p className="mb-0 small">{error}</p>
+        <p className="mb-0 small" key={uuidv4()}>
+          {error}
+        </p>
       ))}
     </div>
   );
