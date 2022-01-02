@@ -4,6 +4,17 @@ import { NeighborhoodApi } from "../api/api";
 import UserContext from "../auth/UserContext";
 import { useDispatch } from "react-redux";
 
+/** Profile.
+ *
+ * Shows a form displaying user profile details.
+ * Handles changing user details.
+ * On submission, updates user details.
+ *
+ * Also contains Delete Account button.
+ * On click, deletes the current user's account from database.
+ *
+ * Routed at /profile.
+ */
 const Profile = ({ logout }) => {
   const dispatch = useDispatch();
   const { currentUser, setCurrentUser } = useContext(UserContext);

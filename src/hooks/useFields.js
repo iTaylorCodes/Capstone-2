@@ -1,5 +1,6 @@
 import { useState } from "react";
 
+// Custom hook for handling form feilds
 const useFields = (initialState) => {
   const [formData, setFormData] = useState(initialState);
 
@@ -14,10 +15,7 @@ const useFields = (initialState) => {
     });
   };
 
-  const resetFormData = () => {
-    setFormData(initialState);
-  };
-  return [formData, handleChange, resetFormData];
+  return [formData, handleChange];
 };
 
 export default useFields;

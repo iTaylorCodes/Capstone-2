@@ -2,6 +2,14 @@ import { useState } from "react";
 import { useDispatch } from "react-redux";
 import { PlacesApi } from "../api/api";
 
+/** SearchBar.
+ *
+ * Search form component to search for neighborhoods.
+ * On search, redirects to /neighborhood/:neighborhood route.
+ *    Also dispatches recent searches into Redux reducer.
+ *
+ * Rendered on homepage.
+ */
 const SearchBar = ({ setSearchError }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();

@@ -4,6 +4,17 @@ import Alert from "../alert/Alert";
 import SearchBar from "../search_bar/SearchBar";
 import SearchesCarousel from "../search_carousel/SearchesCarousel";
 
+/** Homepage.
+ *
+ * Renders the SearchBar component to search for neighborhoods.
+ * On search, authenticates user and redirects to /neighborhood/:neighborhood route.
+ *    Also dispatches recent searches into Redux reducer.
+ *
+ * Also renders the SearchCarousel component to show recent searches from Redux reducer.
+ *    SearchesCarousel images link to /neighborhood/:neighborhood route.
+ *
+ * Routed at /
+ */
 const Home = () => {
   const dispatch = useDispatch();
   const [searchError, setSearchError] = useState(null);
