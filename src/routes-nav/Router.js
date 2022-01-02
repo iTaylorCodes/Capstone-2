@@ -7,6 +7,10 @@ import Neighborhood from "../neighborhoods/Neighborhood";
 import FavoritesList from "../favorites/FavoritesList";
 import PrivateOutlet from "./PrivateOutlet";
 
+/** Router.
+ *
+ * Handles application routing.
+ */
 const Router = ({ signup, login, logout }) => {
   return (
     <Routes>

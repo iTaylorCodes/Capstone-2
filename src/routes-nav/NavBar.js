@@ -3,6 +3,12 @@ import { NavLink, Link } from "react-router-dom";
 import "./NavBar.css";
 import UserContext from "../auth/UserContext";
 
+/** NavBar.
+ *
+ * Renders the NavBar component to allows navigating application.
+ *
+ * Rendered on base App component.
+ */
 const NavBar = ({ logout }) => {
   const { currentUser } = useContext(UserContext);
   return (

@@ -3,6 +3,13 @@ import { useNavigate } from "react-router";
 import Alert from "../alert/Alert";
 import useFields from "../hooks/useFields";
 
+/** Login Form.
+ *
+ * Shows a form to login and manages update to state on changes.
+ * On submission, authenticates user and redirects to / route.
+ *
+ * Routed at /login
+ */
 const LoginForm = ({ login }) => {
   const navigate = useNavigate();
   const [formData, handleChange] = useFields({

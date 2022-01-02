@@ -1,5 +1,12 @@
 import { Link } from "react-router-dom";
 
+/** SearchesCarousel.
+ *
+ * Carousel component to show recent searches from Redux reducer.
+ *    SearchesCarousel images link to /neighborhood/:neighborhood route.
+ *
+ * Rendered on homepage.
+ */
 const SearchesCarousel = ({ recentSearches }) => {
   let searches = recentSearches.map((s) => {
     if (recentSearches.indexOf(s) === 0) {
