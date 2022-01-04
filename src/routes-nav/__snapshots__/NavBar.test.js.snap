@@ -13,7 +13,13 @@ exports[`matches snapshot 1`] = `
         class="navbar-brand text-primary fs-4 fw-bold"
         href="/"
       >
-        Neighborhood
+        <img
+          alt="Logo"
+          class="me-2"
+          src="Neighborhoodz-NavBar-Logo.png"
+          style="width: 35px; height: 35px;"
+        />
+        Neighborhoodz
       </a>
       <button
         aria-controls="navbarTogglerDemo02"

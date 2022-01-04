@@ -1,0 +1,17 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="Score bg-info m-3 rounded-circle p-2"
+    style="width: 125px; height: 125px;"
+  >
+    <h2>
+      10
+    </h2>
+    <p>
+      score
+    </p>
+  </div>
+</DocumentFragment>
+`;

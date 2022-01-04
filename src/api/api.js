@@ -4,6 +4,8 @@ const BASE_URL = process.env.REACT_APP_BASE_URL || "http://localhost:3001";
 const BASE_PLACES_URL = process.env.REACT_APP_PLACES_URL;
 const BASE_PHOTO_URL = process.env.REACT_APP_PHOTO_URL;
 const PROXY_URL = process.env.REACT_APP_PROXY_URL;
+const BASE_GEOCODE_URL = process.env.REACT_APP_GEOCODE_URL;
+const BASE_WALKSCORE_URL = process.env.REACT_APP_WALKSCORE_URL;
 
 /** API Class.
  *
@@ -77,8 +79,8 @@ class NeighborhoodApi {
  */
 
 class PlacesApi {
-  static async getImage(city_state) {
-    const placesUrl = `${BASE_PLACES_URL}/json?input=${city_state}&key=${process.env.REACT_APP_PLACES_API_KEY}&inputtype=textquery&fields=name,photos`;
+  static async getImage(cityState) {
+    const placesUrl = `${BASE_PLACES_URL}/json?input=${cityState}&key=${process.env.REACT_APP_PLACES_API_KEY}&inputtype=textquery&fields=name,photos`;
 
     const initialPlacesRequest = await axios
       .get(PROXY_URL + placesUrl)
@@ -101,4 +103,55 @@ class PlacesApi {
   }
 }
 
-export { NeighborhoodApi, PlacesApi };
+/** API Class.
+ *
+ * Static class get walk scores from Walk Score API.
+ */
+
+class WalkScoreApi {
+  static async getScores(city) {
+    const geocodeUrl = `${BASE_GEOCODE_URL}?key=${process.env.REACT_APP_GEOCODE_API_KEY}&location=${city}`;
+
+    const geocodeRequest = await axios.get(geocodeUrl);
+
+    const lat = geocodeRequest.data.results[0].locations[0].latLng.lat;
+    const long = geocodeRequest.data.results[0].locations[0].latLng.lng;
+
+    if (!lat) throw Error("City not found.");
+    if (!long) throw Error("City not found.");
+
+    const requestUrl = `${BASE_WALKSCORE_URL}/score?format=json&address=${city}&lat=${lat}&lon=${long}&transit=1&bike=1&wsapikey=${process.env.REACT_APP_WALKSCORE_API_KEY}`;
+
+    const scoreRequest = (await axios.get(PROXY_URL + requestUrl)).data;
+
+    const walkScore = scoreRequest.walkscore
+      ? {
+          score: scoreRequest.walkscore,
+          description: scoreRequest.description,
+        }
+      : null;
+
+    const transitScore = scoreRequest.transit
+      ? {
+          score: scoreRequest.transit.score,
+          description: scoreRequest.transit.description,
+        }
+      : null;
+
+    const bikeScore = scoreRequest.bike
+      ? {
+          score: scoreRequest.bike.score,
+          description: scoreRequest.bike.description,
+        }
+      : null;
+
+    const scores = {
+      walkScore: walkScore,
+      transitScore: transitScore,
+      bikeScore: bikeScore,
+    };
+
+    return scores;
+  }
+}
+export { NeighborhoodApi, PlacesApi, WalkScoreApi };

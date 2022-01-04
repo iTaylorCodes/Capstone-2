@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useDispatch } from "react-redux";
-import { PlacesApi } from "../api/api";
+import { useNavigate } from "react-router-dom";
+import { PlacesApi, WalkScoreApi } from "../api/api";
 
 /** SearchBar.
  *
@@ -13,11 +14,14 @@ import { PlacesApi } from "../api/api";
 const SearchBar = ({ setSearchError }) => {
   const [searchTerm, setSearchTerm] = useState("");
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const searchFor = async (searchTerm) => {
     let image;
+    let scores;
     try {
       image = await PlacesApi.getImage(searchTerm);
+      scores = await WalkScoreApi.getScores(searchTerm);
     } catch (e) {
       console.error(e);
       setSearchError(e.message);
@@ -28,7 +32,10 @@ const SearchBar = ({ setSearchError }) => {
       type: "NEW_SEARCH",
       searchTerm,
       image,
+      scores,
     });
+
+    navigate(`/neighborhood/${searchTerm}`);
   };
 
   const handleSubmit = (e) => {

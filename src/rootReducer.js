@@ -28,7 +28,12 @@ const rootReducer = (state = INITIAL_STATE, action) => {
         ...state,
         recentSearches: [
           ...state.recentSearches,
-          { city: action.searchTerm, image: action.image, id: uuidv4() },
+          {
+            city: action.searchTerm,
+            image: action.image,
+            scores: action.scores,
+            id: uuidv4(),
+          },
         ],
       };
 

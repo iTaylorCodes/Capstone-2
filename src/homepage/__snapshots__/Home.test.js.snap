@@ -27,7 +27,13 @@ exports[`matches snapshot 1`] = `
         <h1
           class="text-primary mb-3"
         >
-          Neighborhood
+          <img
+            alt="Logo"
+            class="me-2"
+            src="Neighborhoodz-Logo.png"
+            style="width: 60px; height: 60px;"
+          />
+          Neighborhoodz
         </h1>
       </div>
       <div
