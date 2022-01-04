@@ -11,6 +11,7 @@
     "font-awesome": "^4.7.0",
     "jquery": "^3.6.0",
     "jsonwebtoken": "^8.5.1",
+    "lodash.throttle": "^4.1.1",
     "popper.js": "^1.16.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
@@ -48,5 +49,11 @@
   },
   "devDependencies": {
     "coveralls": "^3.1.1"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx}",
+      "!src/index.js"
+    ]
   }
 }
