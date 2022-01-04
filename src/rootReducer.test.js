@@ -29,11 +29,12 @@ describe("Reducer Tests", () => {
         type: "NEW_SEARCH",
         searchTerm: "LA",
         image: "imageUrl",
+        scores: {},
       })
     ).toEqual({
       ...initialState,
       recentSearches: [
-        { city: "LA", image: "imageUrl", id: expect.any(String) },
+        { city: "LA", image: "imageUrl", id: expect.any(String), scores: {} },
       ],
     });
   });
@@ -42,11 +43,36 @@ describe("Reducer Tests", () => {
     let state = {
       accountWasDeleted: false,
       recentSearches: [
-        { city: "San Diego", image: "imageUrl", id: expect.any(String) },
-        { city: "Los Angeles", image: "imageUrl", id: expect.any(String) },
-        { city: "Las Vegas", image: "imageUrl", id: expect.any(String) },
-        { city: "New York", image: "imageUrl", id: expect.any(String) },
-        { city: "Chicago", image: "imageUrl", id: expect.any(String) },
+        {
+          city: "San Diego",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+        {
+          city: "Los Angeles",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+        {
+          city: "Las Vegas",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+        {
+          city: "New York",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+        {
+          city: "Chicago",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
       ],
     };
 
@@ -55,15 +81,41 @@ describe("Reducer Tests", () => {
         type: "NEW_SEARCH",
         searchTerm: "Portland",
         image: "imageUrl",
+        scores: {},
       })
     ).toEqual({
       ...state,
       recentSearches: [
-        { city: "Los Angeles", image: "imageUrl", id: expect.any(String) },
-        { city: "Las Vegas", image: "imageUrl", id: expect.any(String) },
-        { city: "New York", image: "imageUrl", id: expect.any(String) },
-        { city: "Chicago", image: "imageUrl", id: expect.any(String) },
-        { city: "Portland", image: "imageUrl", id: expect.any(String) },
+        {
+          city: "Los Angeles",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+        {
+          city: "Las Vegas",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+        {
+          city: "New York",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+        {
+          city: "Chicago",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+        {
+          city: "Portland",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
       ],
     });
   });

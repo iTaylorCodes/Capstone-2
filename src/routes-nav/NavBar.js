@@ -2,6 +2,7 @@ import { useContext } from "react";
 import { NavLink, Link } from "react-router-dom";
 import "./NavBar.css";
 import UserContext from "../auth/UserContext";
+import logo from "../logos/Neighborhoodz-NavBar-Logo.png";
 
 /** NavBar.
  *
@@ -18,7 +19,13 @@ const NavBar = ({ logout }) => {
           className={() => "navbar-brand text-primary fs-4 fw-bold"}
           to="/"
         >
-          Neighborhood
+          <img
+            src={logo}
+            alt="Logo"
+            className="me-2"
+            style={{ width: "35px", height: "35px" }}
+          />
+          Neighborhoodz
         </NavLink>
         <button
           className="navbar-toggler"

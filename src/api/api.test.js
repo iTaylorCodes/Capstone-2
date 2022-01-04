@@ -1,4 +1,4 @@
-import { NeighborhoodApi, PlacesApi } from "./api";
+import { NeighborhoodApi, PlacesApi, WalkScoreApi } from "./api";
 
 describe("NeighborhoodApi", function () {
   test("signup", async function () {
@@ -87,5 +87,12 @@ describe("PlacesApi", () => {
   test("getImage calls URL.createObjectURL mock", async function () {
     await PlacesApi.getImage("Los Angeles, CA");
     expect(global.URL.createObjectURL).toHaveBeenCalledTimes(1);
+  });
+});
+
+describe("WalkScoreApi", () => {
+  test("getScores returns city scores", async function () {
+    const res = await WalkScoreApi.getScores("Los Angeles, CA");
+    expect(res).toEqual(expect.any(Object));
   });
 });

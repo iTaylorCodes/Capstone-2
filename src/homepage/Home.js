@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import logo from "../logos/Neighborhoodz-Logo.png";
 import Alert from "../alert/Alert";
 import SearchBar from "../search_bar/SearchBar";
 import SearchesCarousel from "../search_carousel/SearchesCarousel";
@@ -47,7 +48,15 @@ const Home = () => {
 
       <div className="HomeContent m-3">
         <div>
-          <h1 className="text-primary mb-3">Neighborhood</h1>
+          <h1 className="text-primary mb-3">
+            <img
+              src={logo}
+              alt="Logo"
+              className="me-2"
+              style={{ width: "60px", height: "60px" }}
+            />
+            Neighborhoodz
+          </h1>
         </div>
 
         <div className="SearchBar d-flex justify-content-center">
