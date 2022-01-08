@@ -20,6 +20,10 @@ const rootReducer = (state = INITIAL_STATE, action) => {
       };
 
     case "NEW_SEARCH":
+      for (let s of state.recentSearches) {
+        if (s.city === action.searchTerm) return { ...state };
+      }
+
       if (state.recentSearches.length >= 5) {
         state.recentSearches.shift();
       }

@@ -119,4 +119,49 @@ describe("Reducer Tests", () => {
       ],
     });
   });
+
+  it("doesn't collect duplicate searches", () => {
+    let state = {
+      accountWasDeleted: false,
+      recentSearches: [
+        {
+          city: "Los Angeles",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+        {
+          city: "Las Vegas",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+      ],
+    };
+
+    expect(
+      rootReducer(state, {
+        type: "NEW_SEARCH",
+        searchTerm: "Los Angeles",
+        image: "imageUrl",
+        scores: {},
+      })
+    ).toEqual({
+      ...state,
+      recentSearches: [
+        {
+          city: "Los Angeles",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+        {
+          city: "Las Vegas",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+      ],
+    });
+  });
 });
