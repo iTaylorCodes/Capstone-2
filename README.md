@@ -7,8 +7,9 @@
 
 Apis used:
 
-- Walk Score API: `https://www.walkscore.com/professional/api.php`
-- Zillow API: `https://rapidapi.com/apimaker/api/zillow-com1/`
+- Google Places API (city photos): `https://maps.googleapis.com/maps/api/place/photo`
+- MapQuest API (geocoding): `http://open.mapquestapi.com/geocoding/v1/address`
+- Walk Score API (city scores): `https://api.walkscore.com`
 
 # Getting Started with Create React App
 

@@ -3,8 +3,8 @@
 exports[`matches snapshot 1`] = `
 <DocumentFragment>
   <div
-    class="Score bg-info m-3 rounded-circle p-2"
-    style="width: 125px; height: 125px;"
+    class="Score m-3 rounded-circle p-2"
+    style="width: 125px; height: 125px; background: rgb(93, 217, 93);"
   >
     <h2>
       10
