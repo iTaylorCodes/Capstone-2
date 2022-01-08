@@ -21,8 +21,8 @@ exports[`matches snapshot 1`] = `
             class="col-4 col-md-5"
           >
             <div
-              class="Score bg-info m-3 rounded-circle p-2"
-              style="width: 125px; height: 125px;"
+              class="Score m-3 rounded-circle p-2"
+              style="width: 125px; height: 125px; background: rgb(93, 217, 93);"
             >
               <h2>
                 10
@@ -36,8 +36,8 @@ exports[`matches snapshot 1`] = `
             class="col-4 col-md-5"
           >
             <div
-              class="Score bg-info m-3 rounded-circle p-2"
-              style="width: 125px; height: 125px;"
+              class="Score m-3 rounded-circle p-2"
+              style="width: 125px; height: 125px; background: rgb(93, 217, 93);"
             >
               <h2>
                 10
@@ -51,8 +51,8 @@ exports[`matches snapshot 1`] = `
             class="col-4 col-md-5"
           >
             <div
-              class="Score bg-info m-3 rounded-circle p-2"
-              style="width: 125px; height: 125px;"
+              class="Score m-3 rounded-circle p-2"
+              style="width: 125px; height: 125px; background: rgb(93, 217, 93);"
             >
               <h2>
                 10
@@ -63,6 +63,13 @@ exports[`matches snapshot 1`] = `
             </div>
           </div>
         </div>
+        <a
+          class="btn btn-primary mb-3"
+          href="https://www.zillow.com/homes/LA_rb/"
+          target="_blank"
+        >
+          View available properties on Zillow
+        </a>
       </div>
       <div
         class="col-md-6 col-lg-5 col-xl-4"

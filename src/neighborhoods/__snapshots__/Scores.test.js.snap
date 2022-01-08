@@ -9,8 +9,8 @@ exports[`matches snapshot 1`] = `
       class="col-4 col-md-5"
     >
       <div
-        class="Score bg-info m-3 rounded-circle p-2"
-        style="width: 125px; height: 125px;"
+        class="Score m-3 rounded-circle p-2"
+        style="width: 125px; height: 125px; background: rgb(93, 217, 93);"
       >
         <h2>
           10
@@ -24,8 +24,8 @@ exports[`matches snapshot 1`] = `
       class="col-4 col-md-5"
     >
       <div
-        class="Score bg-info m-3 rounded-circle p-2"
-        style="width: 125px; height: 125px;"
+        class="Score m-3 rounded-circle p-2"
+        style="width: 125px; height: 125px; background: rgb(93, 217, 93);"
       >
         <h2>
           10
@@ -39,8 +39,8 @@ exports[`matches snapshot 1`] = `
       class="col-4 col-md-5"
     >
       <div
-        class="Score bg-info m-3 rounded-circle p-2"
-        style="width: 125px; height: 125px;"
+        class="Score m-3 rounded-circle p-2"
+        style="width: 125px; height: 125px; background: rgb(93, 217, 93);"
       >
         <h2>
           10
