@@ -12,13 +12,13 @@ exports[`matches snapshot 1`] = `
       class="row d-flex justify-content-center"
     >
       <div
-        class="col-md-6 col-lg-5 col-xl-4"
+        class="col-lg-5 col-xl-4"
       >
         <div
           class="Scores row p-1 d-flex justify-content-center"
         >
           <div
-            class="col-4 col-md-5"
+            class="col-4 col-md-3 col-lg-5"
           >
             <div
               class="Score m-3 rounded-circle p-2"
@@ -33,7 +33,7 @@ exports[`matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="col-4 col-md-5"
+            class="col-4 col-md-3 col-lg-5"
           >
             <div
               class="Score m-3 rounded-circle p-2"
@@ -48,7 +48,7 @@ exports[`matches snapshot 1`] = `
             </div>
           </div>
           <div
-            class="col-4 col-md-5"
+            class="col-4 col-md-3 col-lg-5"
           >
             <div
               class="Score m-3 rounded-circle p-2"
@@ -72,7 +72,7 @@ exports[`matches snapshot 1`] = `
         </a>
       </div>
       <div
-        class="col-md-6 col-lg-5 col-xl-4"
+        class="col-lg-5 col-xl-4"
       >
         <img
           alt="LA image"

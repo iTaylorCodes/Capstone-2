@@ -25,7 +25,7 @@ const Neighborhood = () => {
     <div className="Neighborhood text-center m-3">
       <h1>{cityInfo.city}</h1>
       <div className="row d-flex justify-content-center">
-        <div className="col-md-6 col-lg-5 col-xl-4">
+        <div className="col-lg-5 col-xl-4">
           {cityInfo.scores ? <Scores scores={cityInfo.scores} /> : ""}
           <a
             href={`https://www.zillow.com/homes/${cityInfo.city}_rb/`}
@@ -36,7 +36,7 @@ const Neighborhood = () => {
           </a>
         </div>
 
-        <div className="col-md-6 col-lg-5 col-xl-4">
+        <div className="col-lg-5 col-xl-4">
           <img
             src={cityInfo.image}
             alt={`${cityInfo.city} image`}

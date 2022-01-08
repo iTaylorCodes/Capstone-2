@@ -4,6 +4,7 @@ import logo from "../logos/Neighborhoodz-Logo.png";
 import Alert from "../alert/Alert";
 import SearchBar from "../search_bar/SearchBar";
 import SearchesCarousel from "../search_carousel/SearchesCarousel";
+import "./Home.css";
 
 /** Homepage.
  *
@@ -34,7 +35,7 @@ const Home = () => {
   }, [dispatch, accountWasDeleted]);
 
   return (
-    <div className="text-center m-3">
+    <div className="text-center home-hero">
       <div id="alert-container" className="fw-bold">
         {accountWasDeleted ? (
           <Alert type="warning" messages={["Your account has been deleted."]} />
@@ -46,17 +47,13 @@ const Home = () => {
         ) : null}
       </div>
 
-      <div className="HomeContent m-3">
-        <div>
+      <div className="HomeContent">
+        <div className="Home-heading m-5">
           <h1 className="text-primary mb-3">
-            <img
-              src={logo}
-              alt="Logo"
-              className="me-2"
-              style={{ width: "60px", height: "60px" }}
-            />
+            <img src={logo} alt="Logo" className="me-2 Home-logo" />
             Neighborhoodz
           </h1>
+          <h3>Find your new Neighborhood now!</h3>
         </div>
 
         <div className="SearchBar d-flex justify-content-center">
@@ -64,7 +61,7 @@ const Home = () => {
         </div>
 
         <div className="SearchesCarousel container d-flex justify-content-center">
-          <div className="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-4 bg-light text-center p-3">
+          <div className="col-12 col-md-8 col-lg-6 col-xl-5 col-xxl-4 bg-light rounded text-center p-1">
             <h3>Recent Searches</h3>
             {recentSearches.length ? (
               <SearchesCarousel recentSearches={recentSearches} />

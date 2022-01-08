@@ -1,0 +1,32 @@
+.home-hero {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: -1;
+  background-image: url("./Neighborhoodz-bg.jpg");
+  background-size: cover;
+  background-position: center center;
+}
+
+.Home-logo {
+  width: 60px;
+  height: 60px;
+}
+
+.Home-heading {
+  text-shadow: -0.5px 0 black, 0 0.5px black, 0.5px 0 black, 0 -0.5px black;
+}
+
+.Home-heading h3 {
+  font-weight: bold;
+  color: #47c547;
+}
+
+.Home-heading h1 {
+  font-weight: bold;
+}
