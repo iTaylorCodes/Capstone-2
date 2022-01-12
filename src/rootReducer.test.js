@@ -164,4 +164,28 @@ describe("Reducer Tests", () => {
       ],
     });
   });
+
+  it("deletes recent searches", () => {
+    let state = {
+      accountWasDeleted: false,
+      recentSearches: [
+        {
+          city: "Los Angeles",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+        {
+          city: "Las Vegas",
+          image: "imageUrl",
+          id: expect.any(String),
+          scores: {},
+        },
+      ],
+    };
+
+    expect(rootReducer(state, { type: "DELETE_SEARCHES" })).toEqual(
+      initialState
+    );
+  });
 });

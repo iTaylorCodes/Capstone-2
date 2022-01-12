@@ -41,6 +41,12 @@ const rootReducer = (state = INITIAL_STATE, action) => {
         ],
       };
 
+    case "DELETE_SEARCHES":
+      return {
+        ...state,
+        recentSearches: [],
+      };
+
     default:
       return state;
   }
