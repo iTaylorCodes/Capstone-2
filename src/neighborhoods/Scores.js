@@ -1,5 +1,13 @@
 import Score from "./Score";
 
+/** Scores.
+ *
+ * Component dedicated to showing all neighborhood scores.
+ *
+ * Renders scores provided by the walkscore api.
+ *
+ * Rendered by Neigborhood.
+ */
 const Scores = ({ scores }) => {
   return (
     <div className="Scores row p-1 d-flex justify-content-center">

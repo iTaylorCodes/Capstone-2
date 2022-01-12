@@ -13,7 +13,14 @@ const reduxSpy = jest.spyOn(redux, "useSelector");
 beforeEach(() => {
   reduxSpy.mockReturnValue({
     accountWasDeleted: false,
-    recentSearches: [],
+    recentSearches: [
+      {
+        city: "San Diego",
+        image: "imageUrl",
+        id: expect.any(String),
+        scores: {},
+      },
+    ],
   });
 });
 
@@ -40,10 +47,7 @@ it("matches snapshot", () => {
 
 it("shows alerts for accountWasDeleted", () => {
   act(() => {
-    reduxSpy.mockReturnValue({
-      accountWasDeleted: true,
-      recentSearches: [],
-    });
+    reduxSpy.mockReturnValue(true);
 
     const { getByText } = render(
       <Provider store={store}>
@@ -55,6 +59,35 @@ it("shows alerts for accountWasDeleted", () => {
 
     const alert = getByText("Your account has been deleted.");
 
-    expect(alert).toBeTruthy();
+    expect(alert).toBeInTheDocument();
+  });
+});
+
+it("can delete recent searches", async () => {
+  await act(async () => {
+    reduxSpy.mockReturnValue([
+      {
+        city: "San Diego",
+        image: "imageUrl",
+        id: expect.any(String),
+        scores: {},
+      },
+    ]);
+
+    const { getByText } = render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Home />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    const clearButton = getByText("Clear");
+    await fireEvent.click(clearButton);
+
+    expect(store.getState()).toEqual({
+      accountWasDeleted: false,
+      recentSearches: [],
+    });
   });
 });

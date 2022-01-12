@@ -1,3 +1,11 @@
+/** Score.
+ *
+ * Component dedicated to showing a neighborhood score.
+ *
+ * Renders a score provided by the walkscore api.
+ *
+ * Rendered by Scores.
+ */
 const Score = ({ score }) => {
   return (
     <div
