@@ -10,6 +10,7 @@ Apis used:
 - Google Places API (city photos): `https://maps.googleapis.com/maps/api/place/photo`
 - MapQuest API (geocoding): `http://open.mapquestapi.com/geocoding/v1/address`
 - Walk Score API (city scores): `https://api.walkscore.com`
+- Hotels API (hotel data): `https://rapidapi.com/apidojo/api/hotels4/`
 
 # Getting Started with Create React App
 

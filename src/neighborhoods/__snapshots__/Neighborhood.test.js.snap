@@ -63,13 +63,28 @@ exports[`matches snapshot 1`] = `
             </div>
           </div>
         </div>
-        <a
-          class="btn btn-primary mb-3"
-          href="https://www.zillow.com/homes/LA_rb/"
-          target="_blank"
+        <div
+          class="row p-1 m-2 d-flex justify-content-center"
         >
-          View available properties on Zillow
-        </a>
+          <div>
+            <a
+              class="btn btn-primary mb-3"
+              href="https://www.zillow.com/homes/LA_rb/"
+              rel="noreferrer"
+              target="_blank"
+            >
+              View available properties on Zillow
+            </a>
+          </div>
+          <div>
+            <button
+              class="btn btn-primary"
+              data-testid="hotelBtn"
+            >
+              Show Nearby Hotels
+            </button>
+          </div>
+        </div>
       </div>
       <div
         class="col-lg-6 col-xl-7"

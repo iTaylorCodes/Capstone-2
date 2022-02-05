@@ -1,5 +1,5 @@
 import Neighborhood from "./Neighborhood";
-import { render } from "@testing-library/react";
+import { render, fireEvent, act } from "@testing-library/react";
 import { Provider } from "react-redux";
 import * as redux from "react-redux";
 import { createStore } from "redux";
@@ -42,4 +42,22 @@ it("matches snapshot", () => {
     </Provider>
   );
   expect(asFragment()).toMatchSnapshot();
+});
+
+it("changes state on hotel button click", async () => {
+  await act(async () => {
+    const { getByTestId } = render(
+      <Provider store={store}>
+        <MemoryRouter>
+          <Neighborhood />
+        </MemoryRouter>
+      </Provider>
+    );
+
+    const hotelBtn = getByTestId("hotelBtn");
+
+    await fireEvent.click(hotelBtn);
+
+    expect(hotelBtn).toBeTruthy();
+  });
 });
