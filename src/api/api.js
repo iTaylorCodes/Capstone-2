@@ -6,6 +6,7 @@ const BASE_PHOTO_URL = process.env.REACT_APP_PHOTO_URL;
 const PROXY_URL = process.env.REACT_APP_PROXY_URL;
 const BASE_GEOCODE_URL = process.env.REACT_APP_GEOCODE_URL;
 const BASE_WALKSCORE_URL = process.env.REACT_APP_WALKSCORE_URL;
+const BASE_HOTELS_URL = process.env.REACT_APP_BASE_HOTELS_URL;
 
 /** API Class.
  *
@@ -89,7 +90,7 @@ class PlacesApi {
     const photoRef =
       initialPlacesRequest?.data?.candidates?.[0]?.photos?.[0]?.photo_reference;
 
-    if (!photoRef) throw Error("City not found.");
+    if (!photoRef) throw Error("Image not found.");
 
     const imageLookupUrl = `${BASE_PHOTO_URL}?photoreference=${photoRef}&key=${process.env.REACT_APP_PLACES_API_KEY}&maxwidth=700&maxheight=700`;
 
@@ -154,4 +155,61 @@ class WalkScoreApi {
     return scores;
   }
 }
-export { NeighborhoodApi, PlacesApi, WalkScoreApi };
+
+/** API Class.
+ *
+ * Static class to get hotel data from Api Dojo Hotels API.
+ */
+
+class HotelsApi {
+  static headers = {
+    "x-rapidapi-host": "hotels4.p.rapidapi.com",
+    "x-rapidapi-key": process.env.REACT_APP_X_RAPIDAPI_KEY,
+  };
+
+  /** Get cityId for hotel search */
+  static async getCityId(city) {
+    const requestUrl = `${BASE_HOTELS_URL}/locations/v2/search?query=${city}`;
+
+    const cityRequest = await axios
+      .get(PROXY_URL + requestUrl, { headers: HotelsApi.headers })
+      .catch(console.error);
+
+    const cityId =
+      cityRequest?.data?.suggestions?.[0]?.entities?.[0]?.destinationId;
+
+    if (!cityId) throw Error("City not found.");
+
+    return cityId;
+  }
+
+  /** Get list of hotels */
+  static async getHotels(city) {
+    const cityId = await HotelsApi.getCityId(city);
+
+    const requestUrl = `${BASE_HOTELS_URL}/properties/list?destinationId=${cityId}&pageNumber=1&pageSize=10&checkIn=2021-01-01&checkOut=2021-01-10&adults1=1`;
+
+    const hotelsRequest = await axios
+      .get(PROXY_URL + requestUrl, { headers: HotelsApi.headers })
+      .catch(console.error);
+
+    const hotels = hotelsRequest?.data?.data?.body?.searchResults?.results;
+
+    return hotels;
+  }
+
+  /** Get hotel details */
+  static async getHotel(hotelId) {
+    const requestUrl = `${BASE_HOTELS_URL}/properties/get-details?id=${hotelId}`;
+
+    const hotelRequest = await axios
+      .get(PROXY_URL + requestUrl, { headers: HotelsApi.headers })
+      .catch(console.error);
+
+    const hotel = hotelRequest?.data?.data?.body;
+
+    return hotel;
+  }
+}
+
+export { NeighborhoodApi, PlacesApi, WalkScoreApi, HotelsApi };

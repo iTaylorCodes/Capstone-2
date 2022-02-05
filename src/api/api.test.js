@@ -1,4 +1,4 @@
-import { NeighborhoodApi, PlacesApi, WalkScoreApi } from "./api";
+import { NeighborhoodApi, PlacesApi, WalkScoreApi, HotelsApi } from "./api";
 
 describe("NeighborhoodApi", function () {
   test("signup", async function () {
@@ -93,6 +93,25 @@ describe("PlacesApi", () => {
 describe("WalkScoreApi", () => {
   test("getScores returns city scores", async function () {
     const res = await WalkScoreApi.getScores("Los Angeles, CA");
+    expect(res).toEqual(expect.any(Object));
+  });
+});
+
+describe("HotelsApi", () => {
+  jest.setTimeout(30000);
+
+  test("getCityId returns cityId", async function () {
+    const res = await HotelsApi.getCityId("Los Angeles, CA");
+    expect(res).toEqual(expect.any(String));
+  });
+
+  test("getHotels returns list of hotels", async function () {
+    const res = await HotelsApi.getHotels("Los Angeles, CA");
+    expect(res).toEqual(expect.any(Array));
+  });
+
+  test("getHotel returns details of hotel", async function () {
+    const res = await HotelsApi.getHotel("634418464");
     expect(res).toEqual(expect.any(Object));
   });
 });

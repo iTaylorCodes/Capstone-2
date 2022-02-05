@@ -1,0 +1,62 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="HotelCard m-2"
+  >
+    <div
+      class="card"
+      style="max-width: 435px;"
+    >
+      <img
+        alt="The Grand NYC"
+        src=""
+        style="max-height: 300px;"
+      />
+      <h3
+        class="card-header"
+      >
+        The Grand NYC
+      </h3>
+      <div
+        class="card-body"
+      >
+        <h4
+          class="card-title"
+        >
+          Rating: 
+          <i
+            class="fa fa-star"
+            style="color: gold;"
+          />
+          <i
+            class="fa fa-star"
+            style="color: gold;"
+          />
+        </h4>
+        <p
+          class="card-text"
+        >
+          <span
+            class="fw-bold"
+          >
+            Neighborhood: 
+          </span>
+          NoMad
+        </p>
+        <p
+          class="card-text"
+        >
+          <span
+            class="fw-bold"
+          >
+            Address: 
+          </span>
+          38 West 31st Street, New York, NY 10001
+        </p>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;
