@@ -28,6 +28,16 @@ exports[`matches snapshot 1`] = `
           <div
             class="card-body"
           >
+            <div
+              class="FavoriteHeart d-flex justify-content-end"
+              style="margin: -5px;"
+            >
+              <i
+                class="fa fa-heart"
+                data-testid="favHeart"
+                style="cursor: pointer;"
+              />
+            </div>
             <h4
               class="card-title"
             >
@@ -88,6 +98,16 @@ exports[`matches snapshot 1`] = `
           <div
             class="card-body"
           >
+            <div
+              class="FavoriteHeart d-flex justify-content-end"
+              style="margin: -5px;"
+            >
+              <i
+                class="fa fa-heart"
+                data-testid="favHeart"
+                style="cursor: pointer;"
+              />
+            </div>
             <h4
               class="card-title"
             >

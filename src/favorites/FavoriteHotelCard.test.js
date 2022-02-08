@@ -1,25 +1,23 @@
-import HotelCard from "./HotelCard";
+import FavoriteHotelCard from "./FavoriteHotelCard";
 import { render } from "@testing-library/react";
 import { UserProvider } from "../testUtils";
 
 const hotel = {
-  id: 634418464,
-  name: "The Grand NYC",
-  starRating: 2,
-  neighbourhood: "NoMad",
-  address: {
-    streetAddress: "38 West 31st Street",
-    locality: "New York",
-    postalCode: "10001",
-    region: "NY",
-    countryName: "United States",
+  pdpHeader: { hotelId: "12345" },
+  propertyDescription: {
+    name: "Tester Hotel",
+    address: {
+      cityName: "Los Angeles",
+      fullAddress: "1234 Tester Way, Los Angeles, CA 12345",
+    },
+    starRating: "5",
   },
 };
 
 it("renders without crashing", () => {
   render(
     <UserProvider>
-      <HotelCard hotel={hotel} />
+      <FavoriteHotelCard hotel={hotel} />
     </UserProvider>
   );
 });
@@ -27,7 +25,7 @@ it("renders without crashing", () => {
 it("matches snapshot", () => {
   const { asFragment } = render(
     <UserProvider>
-      <HotelCard hotel={hotel} />
+      <FavoriteHotelCard hotel={hotel} />
     </UserProvider>
   );
   expect(asFragment()).toMatchSnapshot();

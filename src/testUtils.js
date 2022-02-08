@@ -6,6 +6,7 @@ const testUser = {
   last_name: "testlast",
   email: "test@test.net",
   password: "password",
+  favoritedProperties: ["12345"],
 };
 
 const UserProvider = ({ children, currentUser = testUser }) => (

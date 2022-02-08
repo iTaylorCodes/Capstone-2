@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`matches snapshot 1`] = `
+<DocumentFragment>
+  <div
+    class="FavoriteHeart d-flex justify-content-end"
+    style="margin: -5px;"
+  >
+    <i
+      class="fa fa-heart"
+      data-testid="favHeart"
+      style="color: rgb(2, 117, 216); cursor: pointer;"
+    />
+  </div>
+</DocumentFragment>
+`;
