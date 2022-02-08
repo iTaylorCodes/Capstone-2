@@ -10,6 +10,6 @@ script:
 deploy:
   provider: surge
   domain: itaylorcodes-neighborhoodz.surge.sh
-  project: ./build/
+  project: /build/index.html build/200.html
   on:
     branch: main
