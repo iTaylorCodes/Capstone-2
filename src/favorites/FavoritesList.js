@@ -24,7 +24,7 @@ const FavoritesList = () => {
         if (isSubscribed) {
           for (let val of userFavs) {
             const hotel = await HotelsApi.getHotel(val);
-            setFavHotels([...favHotels, hotel]);
+            setFavHotels((favs) => [...favs, hotel]);
           }
         }
       } catch (e) {
