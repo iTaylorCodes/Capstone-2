@@ -9,7 +9,7 @@ script:
   - npm run build
 deploy:
   provider: surge
-  project: ./static/
   domain: itaylorcodes-neighborhoodz.surge.sh
+  project: ./build/
   on:
     branch: main
