@@ -1,5 +1,6 @@
 import HotelCardList from "./HotelCardList";
 import { render } from "@testing-library/react";
+import { UserProvider } from "../testUtils";
 
 const hotels = [
   {
@@ -31,10 +32,18 @@ const hotels = [
 ];
 
 it("renders without crashing", () => {
-  render(<HotelCardList hotels={hotels} />);
+  render(
+    <UserProvider>
+      <HotelCardList hotels={hotels} />
+    </UserProvider>
+  );
 });
 
 it("matches snapshot", () => {
-  const { asFragment } = render(<HotelCardList hotels={hotels} />);
+  const { asFragment } = render(
+    <UserProvider>
+      <HotelCardList hotels={hotels} />
+    </UserProvider>
+  );
   expect(asFragment()).toMatchSnapshot();
 });

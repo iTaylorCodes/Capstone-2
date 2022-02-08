@@ -2,31 +2,31 @@ import { useEffect, useState } from "react";
 import { PlacesApi } from "../api/api";
 import FavoriteHeart from "../favorites/FavoriteHeart";
 
-/** Hotel Card.
+/** Favorite Hotel Card.
  *
- * Component to show a card with hotel details provided by HotelsAPI.
+ * Component to show a card with hotel details provided by HotelsAPI specific to use favorites.
  *
  * Renders -> Hotel ID, Name, Image, Star Rating, Neighborhood, and Address.
  *  + FavoriteHeart to add/remove hotel from user favorites.
  *
- * Rendered by HotelCardList.
+ * Rendered by FavoritesList.
  */
-const HotelCard = ({ hotel }) => {
+const FavoriteHotelCard = ({ hotel }) => {
   const starIcons = [];
   const [hotelImage, setHotelImage] = useState("");
 
-  for (let s = 1; s <= hotel.starRating; s++) {
+  for (let s = 1; s <= hotel.propertyDescription.starRating; s++) {
     starIcons.push(s);
   }
 
-  const hotelAddress = `${hotel.address.streetAddress}, ${hotel.address.locality}, ${hotel.address.region} ${hotel.address.postalCode}`;
+  const hotelAddress = `${hotel.propertyDescription.address.fullAddress}`;
 
   useEffect(() => {
     let isSubscribed = true;
     const fetchImage = async () => {
       try {
         const image = await PlacesApi.getImage(
-          `${hotel.name}, ${hotel.address.locality}`
+          `${hotel.propertyDescription.name}, ${hotel.propertyDescription.address.cityName}`
         );
         if (isSubscribed) setHotelImage(image);
       } catch (e) {
@@ -35,15 +35,22 @@ const HotelCard = ({ hotel }) => {
     };
     fetchImage();
     return () => (isSubscribed = false);
-  }, [hotel.name, hotel.address.locality]);
+  }, [
+    hotel.propertyDescription.name,
+    hotel.propertyDescription.address.cityName,
+  ]);
 
   return (
     <div className="HotelCard m-2">
       <div className="card" style={{ maxWidth: "435px" }}>
-        <img src={hotelImage} alt={hotel.name} style={{ maxHeight: "300px" }} />
-        <h3 className="card-header">{hotel.name}</h3>
+        <img
+          src={hotelImage}
+          alt={hotel.propertyDescription.name}
+          style={{ maxHeight: "300px" }}
+        />
+        <h3 className="card-header">{hotel.propertyDescription.name}</h3>
         <div className="card-body">
-          <FavoriteHeart hotelId={hotel.id} />
+          <FavoriteHeart hotelId={hotel.pdpHeader.hotelId} />
           <h4 className="card-title">
             Rating:{" "}
             {starIcons.map((s) => (
@@ -52,7 +59,7 @@ const HotelCard = ({ hotel }) => {
           </h4>
           <p className="card-text">
             <span className="fw-bold">Neighborhood: </span>
-            {hotel.neighbourhood}
+            {hotel.propertyDescription.address.cityName}
           </p>
           <p className="card-text">
             <span className="fw-bold">Address: </span>
@@ -64,4 +71,4 @@ const HotelCard = ({ hotel }) => {
   );
 };
 
-export default HotelCard;
+export default FavoriteHotelCard;
