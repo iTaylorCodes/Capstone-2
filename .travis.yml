@@ -6,10 +6,3 @@ cache:
     - node_modules
 script:
   - npm run test:coveralls
-  - npm run build
-deploy:
-  provider: surge
-  domain: itaylorcodes-neighborhoodz.surge.sh
-  project: ./build/index.html
-  on:
-    branch: main

@@ -1,84 +1,90 @@
-# Capstone 2 - Neighborhood
+<p align="center">
+  <a href="https://itaylorcodes-neighborhoodz.surge.sh/" color="black">
+    <img alt="Neighborhoodz" src="src/logos/Neighborhoodz-Logo.png" width="75" /><img alt="Neighborhoodz" src="src/logos/Neighborhoodz-Title.png" width="300" />
+  </a>
+</p>
 
 [![Build Status](https://app.travis-ci.com/iTaylorCodes/Capstone-2-Neighborhood-fe.svg?branch=main)](https://app.travis-ci.com/iTaylorCodes/Capstone-2-Neighborhood-fe)
 [![Coverage Status](https://coveralls.io/repos/github/iTaylorCodes/Capstone-2-Neighborhood-fe/badge.svg?branch=main)](https://coveralls.io/github/iTaylorCodes/Capstone-2-Neighborhood-fe?branch=main)
 [![Codacy Badge](https://app.codacy.com/project/badge/Grade/638762e1a75140b888b09521c0491bb5)](https://www.codacy.com/gh/iTaylorCodes/Capstone-2-Neighborhood-fe/dashboard?utm_source=github.com&utm_medium=referral&utm_content=iTaylorCodes/Capstone-2-Neighborhood-fe&utm_campaign=Badge_Grade)
 [![Maintainability](https://api.codeclimate.com/v1/badges/7103b1cd632feb1f012d/maintainability)](https://codeclimate.com/github/iTaylorCodes/Capstone-2-Neighborhood-fe/maintainability)
 
-Apis used:
+Neighborhoodz is an application that makes it easy to discover great neighborhoods to visit. Using walkability/bike-ability/transit-rating scores from the API provided by `walkscore.com`, as well nearby hotels from the hotels API, and properties available on Zillow.
+
+# Deployment
+
+## Front-end
+
+The front-end for Neighborhoodz is deployed using Surge.
+You can access it at: https://itaylorcodes-neighborhoodz.surge.sh/
+
+## Backend
+
+The backend for Neighborhoodz is deployed using Heroku.
+You can access it at: https://neighborhood-be.herokuapp.com/
+
+The backend for Neighborhoodz handles connecting to the application database for user account functionality.
+
+# APIs
 
 - Google Places API (city photos): `https://maps.googleapis.com/maps/api/place/photo`
 - MapQuest API (geocoding): `http://open.mapquestapi.com/geocoding/v1/address`
 - Walk Score API (city scores): `https://api.walkscore.com`
 - Hotels API (hotel data): `https://rapidapi.com/apidojo/api/hotels4/`
 
-# Getting Started with Create React App
+# Local Setup
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+If you'd like to setup a local version of Neighborhoodz, follow these steps:
 
-## Available Scripts
+## 1. Clone the respository
 
-In the project directory, you can run:
+`$ git clone https://github.com/iTaylorCodes/Capstone-2-Neighborhood-fe.git`
 
-### `npm start`
+`$ cd capstone-2-Neighborhood-fe`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 2. Install all requirements
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+`$ npm install`
 
-### `npm test`
+## 3. Setup environment variables
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Signup for each API and set their URLS and individual keys in the root .env file.
 
-### `npm run build`
+## 5. Run the server and navigate your browser to http://localhost:3000/
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+`npm start`
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Testing
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+To fully test the application, running
 
-### `npm run eject`
+`$ npm test`
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+will test all components, api clasess, custom hooks, and middleware.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+# User Flow
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+### - Searching: From the homepage you can perform a search for a neighborhood you'd like to know more about.
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### - Neighborhood Info: From a neighborhood page you can view scores and hotels for that neighborhood, or use the navigation link to visit Zillow and view properties in that neighborhood.
 
-## Learn More
+### - Visit Neighborhood: From a neighborhood page you can view nearby hotels.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### - Save Hotels: Once viewing hotels for a neighborhood, a logged in user can "heart" a hotel and add it to their favorites page.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+### - Signup / Login: From the signup page you can create an account and login from the login page
 
-### Code Splitting
+### - View User Profile / Delete Account: Once logged in, from the profile page you can view your account details and edit them. You can also delete your account.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+# Technologies
 
-### Analyzing the Bundle Size
+Neighborhoodz Front-end was created using:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- React.js
+- Redux
+- PostgreSQL
+- Jest
+- Bootstrap
+- React-Router v6
+- Axios
+- Lodash
